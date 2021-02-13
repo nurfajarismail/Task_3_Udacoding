@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_3/hitungPage.dart';
+import 'package:task_3/hitungfisika/hitungPage.dart';
 import 'package:task_3/konversiPage.dart';
-import 'package:task_3/loginPage.dart';
+import 'package:task_3/login/loginPage.dart';
 
 class MenuPage extends StatefulWidget {
   @override
