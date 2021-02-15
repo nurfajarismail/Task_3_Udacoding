@@ -103,8 +103,8 @@ class _LuasPageState extends State<LuasPage> {
                         setState(() {
                           nilai1 = double.parse(nilai1Controller.text);
                           nilai2 = double.parse(nilai2Controller.text);
-                          if (nilai1.toString().isEmpty &&
-                              nilai2.toString().isEmpty) {
+                          if (nilai1Controller.text == "" ||
+                              nilai2Controller.toString().isEmpty) {
                             print("Wajib diisi");
                             Fluttertoast.showToast(
                               msg: "Semua Kolom Wajib Diisi",

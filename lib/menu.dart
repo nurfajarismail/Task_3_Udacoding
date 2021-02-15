@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_3/hitungfisika/hitungPage.dart';
-import 'package:task_3/konversiPage.dart';
+import 'package:task_3/konverter/converterPage.dart';
 import 'package:task_3/login/loginPage.dart';
 
 class MenuPage extends StatefulWidget {
@@ -13,7 +13,7 @@ class _MenuPageState extends State<MenuPage> {
   final List<Widget> _widgetOptions = <Widget>[
     LoginPage(),
     HitungPage(),
-    KonversiPage()
+    ConverterPage()
   ];
 
   void onTab(int index) {
