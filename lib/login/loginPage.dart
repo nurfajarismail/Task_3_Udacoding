@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:task_3/login/validLogin.dart';
 
 class LoginPage extends StatefulWidget {
@@ -71,7 +72,8 @@ class _LoginPageState extends State<LoginPage> {
                 height: 10,
               ),
               Container(
-                  width: 250,
+                  width: double.infinity,
+                  // width: 250,
                   decoration: BoxDecoration(
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(20)),
@@ -92,13 +94,46 @@ class _LoginPageState extends State<LoginPage> {
                             // } else if (password.contains("udacodingJaya2021")) {
                             //   print("Password harus udacodingJaya2021");
                           } else if (username == "") {
-                            print("Username tidak boleh kosong");
+                            Fluttertoast.showToast(
+                              msg: "Username tidak boleh kosong",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.TOP,
+                              timeInSecForIosWeb: 1,
+                              backgroundColor: Colors.red,
+                              textColor: Colors.white,
+                            );
+                            //print("Username tidak boleh kosong");
                           } else if (password == "") {
-                            print("Password tidak boleh kosong");
+                            Fluttertoast.showToast(
+                              msg: "Password tidak boleh kosong",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.TOP,
+                              timeInSecForIosWeb: 1,
+                              backgroundColor: Colors.red,
+                              textColor: Colors.white,
+                            );
+                            // print("Password tidak boleh kosong");
                           } else if (password.length < 6) {
-                            print("Password minimal 6 karakter");
+                            Fluttertoast.showToast(
+                              msg: "Password minimal 6 karakter",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.TOP,
+                              timeInSecForIosWeb: 1,
+                              backgroundColor: Colors.red,
+                              textColor: Colors.white,
+                            );
+
+                            //print("Password minimal 6 karakter");
                           } else {
-                            print("Username atau password salah");
+                            Fluttertoast.showToast(
+                              msg: "Username atau password salah",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.TOP,
+                              timeInSecForIosWeb: 1,
+                              backgroundColor: Colors.red,
+                              textColor: Colors.white,
+                            );
+                            // print("Username atau password salah");
                           }
                         });
                       },
