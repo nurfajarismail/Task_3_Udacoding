@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_3/hitungfisika/luasPage.dart';
-import 'package:task_3/hitungfisika/volume.dart';
+import 'package:task_3/hitungfisika/volumePage.dart';
 
 class HitungPage extends StatelessWidget {
   @override
@@ -27,7 +27,7 @@ class HitungPage extends StatelessWidget {
                       );
                     },
                     child: Text(
-                      "Luas",
+                      "Hitung Luas",
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
@@ -48,7 +48,7 @@ class HitungPage extends StatelessWidget {
                       );
                     },
                     child: Text(
-                      "Volume",
+                      "Hitung Volume",
                       style: TextStyle(color: Colors.white),
                     ),
                   ),

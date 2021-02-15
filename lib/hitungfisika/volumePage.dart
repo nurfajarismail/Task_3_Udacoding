@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class LuasPage extends StatefulWidget {
+class VolumePage extends StatefulWidget {
   @override
-  _LuasPageState createState() => _LuasPageState();
+  _VolumePageState createState() => _VolumePageState();
 }
 
-class _LuasPageState extends State<LuasPage> {
+class _VolumePageState extends State<VolumePage> {
   final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
 
   TextEditingController nilai1Controller = TextEditingController();
   TextEditingController nilai2Controller = TextEditingController();
+  TextEditingController nilai3Controller = TextEditingController();
 
   double nilai1;
   double nilai2;
+  double nilai3;
   double hasil;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
       appBar: AppBar(
-        title: Text("Hitung Luas"),
+        title: Text("Hitung Volume"),
       ),
       body: Center(
         child: Container(
@@ -37,9 +39,9 @@ class _LuasPageState extends State<LuasPage> {
                       child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Luasnya adalah:"),
+                      Text("Volumenya adalah:"),
                       Text(
-                        hasil.toString() + " m2",
+                        hasil.toString() + " m3",
                         style: TextStyle(fontSize: 50),
                         textAlign: TextAlign.center,
                       ),
@@ -86,6 +88,25 @@ class _LuasPageState extends State<LuasPage> {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.number,
+                      controller: nilai3Controller,
+                      //  onSaved: (value) => _password =value,
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                          borderSide: BorderSide(color: Colors.blue, width: 2),
+                        ),
+                        hintText: "Masukkan tinggi",
+                        focusedBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.blue, width: 2.0),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -103,6 +124,7 @@ class _LuasPageState extends State<LuasPage> {
                         setState(() {
                           nilai1 = double.parse(nilai1Controller.text);
                           nilai2 = double.parse(nilai2Controller.text);
+                          nilai3 = double.parse(nilai3Controller.text);
                           if (nilai1.toString().isEmpty &&
                               nilai2.toString().isEmpty) {
                             print("Wajib diisi");
@@ -115,7 +137,7 @@ class _LuasPageState extends State<LuasPage> {
                               textColor: Colors.white,
                             );
                           } else {
-                            hasil = nilai1 * nilai2;
+                            hasil = nilai1 * nilai2 * nilai3;
                           }
                         });
                       },
