@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_3/konverter/clikpage.dart';
 
 class ConverterPage extends StatefulWidget {
   @override
@@ -9,8 +10,8 @@ class _KonverterPageState extends State<ConverterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Konversi  Jarak"),
+      body: Center(
+        child: Container(child: CategoryList()),
       ),
     );
   }

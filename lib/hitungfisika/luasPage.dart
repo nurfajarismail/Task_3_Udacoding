@@ -39,7 +39,7 @@ class _LuasPageState extends State<LuasPage> {
                     children: [
                       Text("Luasnya adalah:"),
                       Text(
-                        hasil.toString() + " m2",
+                        hasil.toString() + " m²",
                         style: TextStyle(fontSize: 50),
                         textAlign: TextAlign.center,
                       ),
