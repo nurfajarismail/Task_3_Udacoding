@@ -51,7 +51,7 @@ class _ConverterPageState extends State<ConverterPage> {
     var multiplier = _perhitungan[nFrom.toString()][nTo];
     var result = value * multiplier;
     if (result == 0) {
-      _hasilKonversi = 'This conversion cannot be performed';
+      _hasilKonversi = 'Konversi tidak dapat dilakukan';
     } else {
       _hasilKonversi = ' ${result.toString()}';
     }
@@ -65,16 +65,23 @@ class _ConverterPageState extends State<ConverterPage> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        title: Text('Measures Converter'),
+        title: Text('Konversi Panjang'),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.all(20),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Spacer(),
             TextField(
               decoration: InputDecoration(
-                hintText: "Please enter the value",
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                  borderSide: BorderSide(color: Colors.blue, width: 2),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                ),
+                hintText: "Masukkan angka",
               ),
               onChanged: (text) {
                 var rv = double.tryParse(text);
@@ -85,12 +92,15 @@ class _ConverterPageState extends State<ConverterPage> {
                 }
               },
             ),
-            Spacer(),
+            SizedBox(
+              height: 10,
+            ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 DropdownButton(
                   hint: Text(
-                    "Unit",
+                    "Pilih satuan",
                   ),
                   items: _konversi.map((String value) {
                     return DropdownMenuItem<String>(
@@ -113,17 +123,14 @@ class _ConverterPageState extends State<ConverterPage> {
                   },
                   value: _konversi1,
                 ),
-                Spacer(),
                 Icon(
                   Icons.arrow_forward,
                   color: Colors.blue[600],
                   size: 24.0,
-                  semanticLabel: 'Text to announce in accessibility modes',
                 ),
-                Spacer(),
                 DropdownButton(
                   hint: Text(
-                    "Unit",
+                    "Pilih satuan",
                   ),
                   items: _konversi.map((String value) {
                     return DropdownMenuItem<String>(
@@ -150,17 +157,24 @@ class _ConverterPageState extends State<ConverterPage> {
                 ),
               ],
             ),
-            Spacer(
-              flex: 1,
+            SizedBox(
+              height: 10,
             ),
-            Spacer(
-              flex: 1,
-            ),
-            Text(
-              (_hasilKonversi == null) ? '' : _hasilKonversi,
-            ),
-            Spacer(
-              flex: 8,
+            Container(
+              width: double.infinity,
+              child: Card(
+                color: Colors.blue,
+                child: Container(
+                  height: 100,
+                  width: double.infinity,
+                  child: Center(
+                    child: Text(
+                      (_hasilKonversi == null) ? '' : _hasilKonversi,
+                      style: TextStyle(color: Colors.white, fontSize: 30),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ],
         ),

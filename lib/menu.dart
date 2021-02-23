@@ -40,7 +40,7 @@ class _MenuPageState extends State<MenuPage> {
             label: 'Fisika',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
+            icon: Icon(Icons.swap_horiz),
             label: 'Konversi',
           ),
         ],
